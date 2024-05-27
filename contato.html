@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contato</title>
+  <meta name="description" content="">
+  <meta name="author" content="Arthur Conteiro Trindade">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="imgs/icone.png" type="png" sizes="16x16">
+  <link rel="stylesheet" type="text/css" href="style1.css">
+  <script>
+    function validateForm() {
+      const name = document.forms["contactForm"]["name"].value;
+      const email = document.forms["contactForm"]["email"].value;
+      const message = document.forms["contactForm"]["message"].value;
+
+      if (name.length < 5) {
+        alert("Por favor, coloque o nome do usuário com pelo menos 5 letras.");
+        return false;
+      }
+      if (email === "") {
+        alert("Por favor, coloque o email do usuário.");
+        return false;
+      }
+      if (message === "") {
+        alert("Por favor, escreva uma mensagem.");
+        return false;
+      }
+      alert("Dados enviados com sucesso!");
+      return true;
+    }
+  </script>
+</head>
+<body>
+<nav>
+  <div class="logo">
+    <a href="index.html">
+      <img src="imgs/bandeira.jpg" alt="Logo">
+    </a>
+  </div>
+  <ul>
+    <li><a href="historia.html">História</a></li>
+    <li><a href="informacoes.html">Informações</a></li>
+    <li><a href="intercambio.html">Intercâmbio</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+</nav>
+
+<div class="content">
+  <section class="main-section">
+    <div class="text-content">
+      <h1>Contato</h1>
+      <form name="contactForm" onsubmit="return validateForm()" action="success.html" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Gmail:</label>
+        <input type="email" id="email" name="email" pattern=".+@gmail\.com" required>
+        
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<footer>
+  <div class="footer-content">
+    <p>Arthur Trindade 2024 - &copy; Todos os direitos reservados</p>
+    <p><a href="#top">Topo</a></p>
+  </div>
+</footer>
+</body>
+</html>
